@@ -17,13 +17,13 @@ let increase_count m c =
   | None -> 1)
 
 let count_nucleotides s = 
-  let invalid = (String.to_list s)
+  let chars = (String.to_list s) in
+  let invalid = chars
     |> List.filter ~f:is_invalid
-    |> List.hd
-  in match invalid with
+    |> List.hd in
+  match invalid with
     | Some x  -> Result.Error x
-    | None -> Result.Ok(
-      (String.to_list s)
-      |> (List.fold_left
-          ~f:(fun m c -> increase_count m c)
-          ~init:empty))
+    | None -> Result.Ok(chars
+        |> (List.fold_left
+            ~f:(fun m c -> increase_count m c)
+            ~init:empty))
