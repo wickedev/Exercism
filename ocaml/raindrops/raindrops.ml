@@ -6,4 +6,3 @@ let raindrop n =
                ^ (printer "Plang" 5)
                ^ (printer "Plong" 7) in
     if output = "" then Int.to_string n else output
-    
