@@ -36,8 +36,7 @@ let tests =
     "DNA string with five Cytosine nucleotides" >:: aire (Ok 5) (NC.count_nucleotide "CCCCC" 'C');
     "DNA string with two Guanine nucleotides" >:: aire (Ok 2) (NC.count_nucleotide "ACGGT" 'G');
     "DNA string with three Thymine nucleotides" >:: aire (Ok 3) (NC.count_nucleotide "CACTAGCTGCT" 'T');
-
-    (*
+    
     "Invalid DNA string has no nucleotides" >::
     amre (Error 'X') (NC.count_nucleotides "ACGXT");
 
@@ -58,7 +57,6 @@ let tests =
       let exp = Ok ((Map.of_alist_exn (module Char)) [('A', 1); ('C', 2); ('G', 3); ('T', 4)])
       in amre exp (NC.count_nucleotides "CGTATGTCTG")
     end;
-    *)
   ]
 
 let () =
