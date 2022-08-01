@@ -1,0 +1,22 @@
+opam-version: "2.0"
+name: "raindrops"
+version: "0.1"
+synopsis: "Exercism ocaml raindrops"
+description: "Exercism ocaml raindrops"
+maintainer: "Ryan Yang <orange881217@gmail.com>"
+authors: "Name <email>"
+license: "MIT"
+homepage: "https://github.com/wickedev/Exercism"
+bug-reports: "https://github.com/wickedev/Exercism/issues"
+dev-repo: "git+https://github.com/wickedev/Exercism"
+depends: [
+  "ocaml" 
+  "dune" 
+  "opam-lock"
+  "base"
+  "ounit"
+]
+build: [
+  [ "dune" "subst" ] {pinned}
+  [ "dune" "build" "-p" name "-j" jobs ]
+]
