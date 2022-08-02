@@ -5,4 +5,7 @@ let raindrop n =
     let output = (printer "Pling" 3)
                ^ (printer "Plang" 5)
                ^ (printer "Plong" 7) in
-    if output = "" then Int.to_string n else output
+    if output = "" then string_of_int n else output
+
+
+
