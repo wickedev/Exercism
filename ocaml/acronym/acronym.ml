@@ -1,13 +1,18 @@
 module String = struct
   include String
-  let first (s: string): char = String.get s 0
+  let first (s: string): char option = match s with
+    | "" -> None
+    | _  -> Some (String.get s 0)
 end
 
 let acronym text = text
-  |> Str.split (Str.regexp "[ \n\r\x0c\t_-]+") 
-  |> List.map String.first
+  |> Base.String.split_on_chars ~on:[' '; '-'; '_']
+  |> List.filter_map String.first
   |> List.map Char.uppercase_ascii
-  |> Base.String.of_char_list 
+  |> Base.String.of_char_list
+
+(* let is_not_empty x = not @@ (x = "") *)
+(* let is_not_empty x = (not (x = "")) *)
 
 (*let acronym text = Base.String.of_char_list
   @@ List.map Char.uppercase_ascii
