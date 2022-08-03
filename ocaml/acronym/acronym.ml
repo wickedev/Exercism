@@ -11,8 +11,9 @@ let acronym text = text
   |> List.map Char.uppercase_ascii
   |> Base.String.of_char_list
 
-(* let is_not_empty x = not @@ (x = "") *)
 (* let is_not_empty x = (not (x = "")) *)
+(* let is_not_empty x = not @@ ( = ) "" x *)
+(* let is_not_empty x = ( <> ) "" x *)
 
 (*let acronym text = Base.String.of_char_list
   @@ List.map Char.uppercase_ascii
