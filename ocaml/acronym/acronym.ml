@@ -1,8 +1,8 @@
 module String = struct
   include String
-  let first (s: string): char option = match s with
+  let first = function 
     | "" -> None
-    | _  -> Some (String.get s 0)
+    | s -> Some (String.get s 0)
 end
 
 let acronym text = text
