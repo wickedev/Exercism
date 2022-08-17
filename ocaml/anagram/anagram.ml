@@ -20,5 +20,5 @@ let eq lower_given sorted_given candidate =
 
 let anagrams given candidates = 
     let lower_given = (lowercase_ascii given) in
-    let is_anagram  = eq lower_given @@ (sort lower_given) in
-    List.filter_map is_anagram candidates
+    let given's_anagram  = eq lower_given @@ (sort lower_given) in
+    candidates |> List.filter_map given's_anagram
